@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "./app.cjs",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/app.cjs"
+        }
+    ],
+    "crons": [
+        {
+            "path": "/daily-rewards",
+            "schedule": "0 12 * * *"
+        }
+    ]
+}
