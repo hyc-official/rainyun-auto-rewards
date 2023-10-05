@@ -15,7 +15,7 @@
     "crons": [
         {
             "path": "/daily-rewards",
-            "schedule": "0 12 * * *"
+            "schedule": "0 0 * * *"
         }
     ]
 }
