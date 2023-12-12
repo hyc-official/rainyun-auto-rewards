@@ -28,7 +28,10 @@ apis.forEach((e) => {
     app.get(e.path, (req, res, next) => {
         (async (req, res) => {
             const rp = await fetch(e.rainyun_apiurl, e.fetch_options);
-            res.status(rp.status).send(await rp.text());
+            const txt = await rp.text();
+            console.log("Status", rp.status);
+            console.log("Response", txt);
+            res.status(rp.status).send(txt);
         })(req, res).catch(next);
     });
 });
